@@ -25,7 +25,7 @@ const ProductCard = ({product}: {product:ProductType}) =>{
             {/* IMAGEN */}
             <Link href={`/products/${product.id}`}>
             <div className="relative aspect-2/3">
-                <Image src={product.images[product.colors[0]]} alt={product.name} fill className="object-cover hover:scale-105 transition-all duration-300"/>
+                <Image src={product.images[productTypes.color]} alt={product.name} fill className="object-cover hover:scale-105 transition-all duration-300"/>
             </div>
             </Link>
             {/* DETALLE DEL PRODUCTO */}
