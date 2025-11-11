@@ -24,7 +24,7 @@ const ProductCard = ({product}: {product:ProductType}) =>{
                         <span className="text-gray-500">Talles</span>
                         <select name="talle" id="talle">
                             {product.sizes.map(size =>(
-                                <option value={size}>{size}</option>
+                                <option value={size}>{size.toUpperCase()}</option>
                             ))}
                         </select>
                     </div>
