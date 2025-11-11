@@ -1,6 +1,8 @@
 //TEMPORAL
 
-const products = [
+import { ProductsType } from "../types";
+
+const products:ProductsType = [
   {
     id: 1,
     name: "Adidsa CoreFit T-Short",
@@ -69,6 +71,7 @@ const products = [
       "Zapatillas deportivas con amortiguación avanzada para una comodidad excepcional durante todo el día. Diseño moderno y versátil que se adapta tanto a actividades deportivas como al uso diario.",
     price: 150000,
     sizes: ["40", "42", "43", "44"],
+    colors:["gris", "blanco"],
     images: {gris: "/products/6g.png", blanco: "/products/6w.png"},
   },
   {
@@ -85,7 +88,7 @@ const products = [
   {
     id: 8,
     name: "Levis Classic Denim",
-    shortDescrsiption: "Jeans clásicos de mezclilla",
+    shortDescription: "Jeans clásicos de mezclilla",
     description:
       "Jeans clásicos de mezclilla con un corte atemporal que se adapta a cualquier ocasión. Fabricados con mezclilla de alta calidad para mayor durabilidad y comodidad.",
     price: 60000,
@@ -96,7 +99,9 @@ const products = [
 ];
 
 const ProductList = () => {
-  return <div className=""></div>;
+  return <div className="w-full">
+    
+  </div>;
 };
 
 export default ProductList;
