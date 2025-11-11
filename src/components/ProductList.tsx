@@ -7,7 +7,7 @@ import ProductCard from "./ProductCard";
 const products:ProductsType = [
   {
     id: 1,
-    name: "Adidsa CoreFit T-Short",
+    name: "Adidas CoreFit T-Short",
     shortDescription: "Camiseta deportiva de alto rendimiento",
     description:
       "Camiseta deportiva de alto rendimiento fabricada con materiales transpirables que mantienen la frescura durante el ejercicio. Diseño ergonómico para un ajuste cómodo y libertad de movimiento.",
