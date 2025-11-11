@@ -4,8 +4,22 @@ import  Link  from "next/link";
 import  Image  from "next/image";
 import { ProductType } from "../types";
 import { ShoppingCart } from "lucide-react";
+import { useState } from "react";
 
 const ProductCard = ({product}: {product:ProductType}) =>{
+    const [productTypes, setProductTypes] = useState({
+    size: product.sizes[0],
+    color: product.colors[0],
+    });
+
+
+    const handleProductType = ({type, value}:{type:"size" | "color", value:string
+    }) =>{
+        setProductTypes(prev=>({
+            ...prev,
+            [type]:value
+        }))
+    };
     return(
         <div className="shadow-lg rounded-lg overflow-hidden">
             {/* IMAGEN */}
@@ -23,7 +37,9 @@ const ProductCard = ({product}: {product:ProductType}) =>{
                     {/* SIZES */}
                     <div className="flex flex-col gap-1">
                         <span className="text-gray-500">Talles</span>
-                        <select name="talle" id="talle" className="ring ring-gray-300 rounded-md px-2 py-1">
+                        <select name="talle" id="talle" className="ring ring-gray-300 rounded-md px-2 py-1"
+                        onChange={e=>handleProductType({type:"size", value:e.target.value})}
+                        >
                             {product.sizes.map(size =>(
                                 <option key={size} value={size}>{size.toUpperCase()}</option>
                             ))}
@@ -34,9 +50,18 @@ const ProductCard = ({product}: {product:ProductType}) =>{
                         <span className="text-gray-500">Colores</span>
                         <div className="flex items-center gap-2">
                             {product.colors.map(color=>(
-                                <div className="" key={color}>
-                                    <div className="w-3.5 h-3.5 rounded-full" style={{backgroundColor:color}}></div>
-                                </div>
+                                    <div
+                            key={color}
+                            onClick={() => handleProductType({ type: "color", value: color })}
+                            className={`cursor-pointer border ${
+                                productTypes.color === color ? "border-gray-400" : "border-gray-200"
+                            } rounded-full p-0.5`}
+                            >
+                            <div
+                                className="w-3.5 h-3.5 rounded-full"
+                                style={{ backgroundColor: color }}
+                            ></div>
+                            </div>
                             ))}
                         </div>
                     </div>
