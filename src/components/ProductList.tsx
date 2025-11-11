@@ -96,7 +96,7 @@ const products:ProductsType = [
     price: 60000,
     sizes: ["s", "m", "l"],
     colors: ["azul", "verde"],
-    images: {azul: "/products.8b.png", verde: "/products/8gr.png"},
+    images: {azul: "/products/8b.png", verde: "/products/8gr.png"},
   },
 ];
 
@@ -104,7 +104,7 @@ const ProductList = () => {
   return <div className="w-full">
     <Categories/>
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-12">{products.map(product=>(
-        <ProductCard key={product.id} product={product}/>
+        <ProductCard key={product.id} product={product} />
     ))}</div>
 
   </div>;

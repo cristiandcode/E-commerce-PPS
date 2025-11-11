@@ -1,10 +1,18 @@
 "use client"
 
-import { ProductsType } from "../types";
+import  Link  from "next/link";
+import  Image  from "next/image";
+import { ProductType } from "../types";
 
-const ProductCard = ({product}: {product:ProductsType}) =>{
+const ProductCard = ({product}: {product:ProductType}) =>{
     return(
-        <div className="">ProductCard</div>
+        <div className="shadow-lg rounded-lg overflow-hidden">
+            <Link href={`/products/${product.id}`}>
+            <div className="relative aspect-2/3">
+                <Image src={product.images[product.colors[0]]} alt={product.name} fill className="object-cover"/>
+            </div>
+            </Link>
+        </div>
     )
 }
 export default ProductCard;
