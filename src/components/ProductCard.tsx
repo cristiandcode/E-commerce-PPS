@@ -22,14 +22,23 @@ const ProductCard = ({product}: {product:ProductType}) =>{
                     {/* SIZES */}
                     <div className="flex flex-col gap-1">
                         <span className="text-gray-500">Talles</span>
-                        <select name="talle" id="talle">
+                        <select name="talle" id="talle" className="ring ring-gray-300 rounded-md px-2 py-1">
                             {product.sizes.map(size =>(
-                                <option value={size}>{size.toUpperCase()}</option>
+                                <option key={size} value={size}>{size.toUpperCase()}</option>
                             ))}
                         </select>
                     </div>
                     {/* COLORS */}
-                    <div className=""></div>
+                    <div className="flex flex-col gap-1">
+                        <span className="text-gray-500">Colores</span>
+                        <div className="flex items-center gap-2">
+                            {product.colors.map(color=>(
+                                <div className="" key={color}>
+                                    <div className="w-3.5 h-3.5 rounded-full" style={{backgroundColor:color}}></div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
